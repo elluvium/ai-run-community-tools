@@ -1,8 +1,8 @@
 """Simple calculator tool implementation."""
-from typing import Dict, Any
+from typing import Dict, Any, Type
 from pydantic import BaseModel, Field
 
-from base.ai_run_tool import AIRunTool, ToolMetadata
+from ai_run_community_tools.base.ai_run_tool import AIRunTool, ToolMetadata
 
 
 class CalculatorInput(BaseModel):
@@ -16,7 +16,7 @@ class SimpleCalculatorTool(AIRunTool):
     
     name: str = "calculator_sum"
     description: str = "A simple calculator that adds two integer numbers."
-    args_schema: type[BaseModel] = CalculatorInput
+    args_schema: Type[BaseModel] = CalculatorInput
     metadata: ToolMetadata = ToolMetadata(
         name="calculator_sum",
         label="Calculator Sum",

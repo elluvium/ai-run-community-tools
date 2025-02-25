@@ -29,8 +29,8 @@ class AIRunTool(BaseTool):
     description: str = ""
     metadata: Optional[ToolMetadata] = None
     args_schema: Optional[Type[BaseModel]] = None
-    api_wrapper: BaseModel = Field(default_factory=BaseModel)
-    handle_tool_error: bool = True
+    #api_wrapper: Optional[BaseModel] = Field(default_factory=BaseModel)
+    handle_tool_error: Optional[bool] = True
 
     def _run(
         self,
